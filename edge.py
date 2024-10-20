@@ -26,7 +26,7 @@ llm = LLM(model="gemini/gemini-1.5-pro", temperature=0.3, verbose=True, api_key=
 def assess_complexity(query):
     complexity_agent = Agent(
         role='Query Complexity Evaluator',
-        goal=f"Understand and assess the complexity of the following query: {query}. If the query is more than 8 words, consider it is a complex question. Provide only score value between 0 (simple) and 1 (complex).",
+        goal=f"Understand and assess the complexity of the following query: {query}. Provide only score value between 0 (simple) and 1 (complex).",
         backstory="You are an agent responsible for evaluating query complexity based on the user's question.",
         llm=llm,
     )
